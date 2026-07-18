@@ -1,3 +1,21 @@
+## Architecture
+
+![Architecture](assets/architecture.png)
+
+## Program Demo
+
+### Interface Selection
+
+![Interface Selection](assets/interface_selection.png)
+
+### Packet Capture
+
+![Packet Capture](assets/packet_capture.png)
+
+### Packet summary
+
+![Packet Capture](assets/packet_summary.png)
+
 # Python Packet Sniffer
 
 A beginner-friendly packet sniffer developed using Python and Scapy. The project captures live network packets from a selected network interface and displays protocol information in real time.
