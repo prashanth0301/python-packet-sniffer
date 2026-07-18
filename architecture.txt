@@ -1,0 +1,98 @@
+=========================================================
+            PYTHON PACKET SNIFFER ARCHITECTURE
+=========================================================
+
+                    Start Program
+                          │
+                          ▼
+                 packet_sniffer.py
+                          │
+         ┌────────────────┴────────────────┐
+         │                                 │
+         ▼                                 ▼
+  Display Banner                  Initialize Output File
+         │                                 │
+         └────────────────┬────────────────┘
+                          ▼
+              Display Network Interfaces
+                          │
+                          ▼
+                User Selects Interface
+                          │
+                          ▼
+                 Display Capture Filters
+                          │
+                          ▼
+                 User Selects Filter
+                          │
+                          ▼
+                  Start Packet Capture
+                          │
+                          ▼
+                  Scapy sniff() Function
+                          │
+                          ▼
+                analyze_packet(packet)
+                          │
+      ┌──────────┬──────────┬──────────┬──────────┬──────────┐
+      │          │          │          │          │
+      ▼          ▼          ▼          ▼          ▼
+   TCP       UDP        DNS       ICMP       ARP
+      │          │          │          │          │
+      ▼          ▼          ▼          ▼          ▼
+ parse_tcp() parse_udp() parse_dns() parse_icmp() parse_arp()
+      │          │          │          │          │
+      └──────────┴──────────┴──────────┴──────────┘
+                          │
+                          ▼
+             Display Packet Information
+                          │
+                          ▼
+                 Save Packet to File
+                          │
+                          ▼
+          output/captured_packets.txt
+                          │
+                          ▼
+                 Update Statistics
+                          │
+                          ▼
+                Wait for Next Packet
+                          │
+                          ▼
+                User Presses Ctrl + C
+                          │
+                          ▼
+              KeyboardInterrupt Raised
+                          │
+                          ▼
+                 Print Capture Summary
+                          │
+                          ▼
+                     Program Ends
+
+=========================================================
+FILES
+
+packet_sniffer.py
+    Main program
+
+banner.py
+    Banner display
+
+config.py
+    Configuration values
+
+interface_manager.py
+    Interface selection
+
+protocols.py
+    Protocol parsing
+
+packet_utils.py
+    Statistics & logging
+
+output/
+    Captured packet log
+
+=========================================================
